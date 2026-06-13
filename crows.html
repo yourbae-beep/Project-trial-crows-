@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Intelligent Crow - Amazing Facts & Information</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #f39c12;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            background-attachment: fixed;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #f39c12;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            font-weight: bold;
+        }
+
+        .cta-button:hover {
+            background-color: #e67e22;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            color: #34495e;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            margin-top: 0;
+        }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Fun Facts */
+        .fun-facts {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .facts-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .fact-box {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 5px;
+            border-left: 4px solid #f39c12;
+        }
+
+        .fact-box strong {
+            color: #f39c12;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        .social-links {
+            margin: 1rem 0;
+        }
+
+        .social-links a {
+            color: #f39c12;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .hero {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <div class="logo">🐦 Crow Kingdom</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#facts">Facts</a></li>
+                <li><a href="#abilities">Abilities</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>🐦 The Remarkable Crow</h1>
+        <p>Discover the Intelligence and Mystery of Nature's Smartest Birds</p>
+        <a href="#about" class="cta-button">Learn More</a>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Crows</h2>
+            <p>Crows are among the most intelligent birds on the planet. With their sleek black plumage, sharp beady eyes, and distinctive calls, crows have captivated human imagination for centuries. Found on every continent except Antarctica, these remarkable corvids exhibit problem-solving abilities that rival those of great apes.</p>
+            <p>The crow family includes over 40 different species, each with unique characteristics and behaviors. From the large carrion crow to the intelligent rook, these birds have adapted to thrive in diverse environments, from rural farmlands to bustling urban cities.</p>
+        </section>
+
+        <!-- Features Grid -->
+        <section id="abilities">
+            <h2>Amazing Crow Abilities</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>Problem Solving</h3>
+                    <p>Crows can solve multi-step puzzles and remember solutions for extended periods. They've been observed using tools and creating new implements to access food.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🗣️</div>
+                    <h3>Complex Communication</h3>
+                    <p>Crows have sophisticated vocalizations and can recognize individual human faces. They communicate warnings, food locations, and social information within their flocks.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Memory & Learning</h3>
+                    <p>With an exceptional memory, crows can remember people who have treated them kindly or unkindly. They learn from observation and teach younger crows.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛠️</div>
+                    <h3>Tool Usage</h3>
+                    <p>Crows create and use tools like sticks and wires to obtain food. They have been observed improving their tools over time through trial and error.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏠</div>
+                    <h3>Social Structure</h3>
+                    <p>Crows live in complex social groups with hierarchies and cooperative behaviors. They care for their young and often help other crows in their community.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Playfulness</h3>
+                    <p>Crows engage in play activities like sliding on snow, performing aerial tricks, and interacting with other animals for apparent enjoyment.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Facts Section -->
+        <section id="facts" class="fun-facts">
+            <h2>Fascinating Crow Facts</h2>
+            <div class="facts-list">
+                <div class="fact-box">
+                    <strong>Brain Size:</strong> Crows have the largest brain-to-body ratio of any bird species.
+                </div>
+                <div class="fact-box">
+                    <strong>Lifespan:</strong> Wild crows can live 15-20+ years in nature.
+                </div>
+                <div class="fact-box">
+                    <strong>Diet:</strong> Omnivores - crows eat seeds, insects, fruits, and small animals.
+                </div>
+                <div class="fact-box">
+                    <strong>Flight:</strong> Crows can fly up to 30 mph and perform aerial acrobatics.
+                </div>
+                <div class="fact-box">
+                    <strong>Vocalizations:</strong> A group of crows is called a "murder" or "parliament."
+                </div>
+                <div class="fact-box">
+                    <strong>Distribution:</strong> Crows are found on every continent except Antarctica.
+                </div>
+                <div class="fact-box">
+                    <strong>Intelligence:</strong> Tested to have similar intelligence to a 6-year-old child.
+                </div>
+                <div class="fact-box">
+                    <strong>Tool Makers:</strong> Among the few animals observed making and using tools.
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery">
+            <h2>Crow Gallery</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1444464666175-1629670d37e0?w=400&h=250&fit=crop" alt="Black Crow Portrait">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1444464666175-1629670d37e0?w=400&h=250&fit=crop" alt="Crow in Flight">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1444464666175-1629670d37e0?w=400&h=250&fit=crop" alt="Crow on Branch">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1444464666175-1629670d37e0?w=400&h=250&fit=crop" alt="Crow Close-up">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1444464666175-1629670d37e0?w=400&h=250&fit=crop" alt="Crows Together">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1444464666175-1629670d37e0?w=400&h=250&fit=crop" alt="Crow in Nature">
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Get Involved</h2>
+            <p>Interested in learning more about crows or contributing to crow research? Here are some ways you can help:</p>
+            <ul style="margin-left: 2rem; margin-top: 1rem;">
+                <li>Support local bird conservation organizations</li>
+                <li>Participate in citizen science bird monitoring programs</li>
+                <li>Create bird-friendly spaces in your community</li>
+                <li>Share crow facts and education with others</li>
+                <li>Reduce light pollution and habitat destruction</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 The Intelligent Crow - Educational Website</p>
+        <p>Celebrating the Wonder of Nature's Smartest Birds</p>
+        <div class="social-links">
+            <a href="#facebook">Facebook</a>
+            <a href="#twitter">Twitter</a>
+            <a href="#instagram">Instagram</a>
+        </div>
+        <p><small>Images sourced from Unsplash. For educational purposes.</small></p>
+    </footer>
+</body>
+</html>
